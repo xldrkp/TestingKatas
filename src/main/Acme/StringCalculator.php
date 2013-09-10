@@ -8,7 +8,7 @@ class StringCalculator
 
     public function add($string)
     {
-        $this->number = array_sum(preg_split('/[\s,]+/', $string));
+        $this->number = array_sum(preg_split('/[\s,\+]+/', $string));
         return $this->number;
     }
 }

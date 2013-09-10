@@ -74,4 +74,26 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
             $this->calculator->add("1\n2\n2")
         );
     }
+
+    /**
+     * @test
+     */
+    public function calculator_allows_plussign_delimiter()
+    {
+        $this->assertEquals(
+            5,
+            $this->calculator->add("1+2+2")
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function calculator_allows_mix_of_delimiters()
+    {
+        $this->assertEquals(
+            5,
+            $this->calculator->add("1,1+1 1\n1")
+        );
+    }
 }
