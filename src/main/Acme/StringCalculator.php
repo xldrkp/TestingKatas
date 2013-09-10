@@ -4,8 +4,11 @@ namespace Acme;
 
 class StringCalculator
 {
+    private $number;
+
     public function add($string)
     {
-        throw new \RuntimeException("@TODO: Implement");
+        $this->number = array_sum(preg_split('/[\s,]+/', $string));
+        return $this->number;
     }
 }
